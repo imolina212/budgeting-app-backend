@@ -10,15 +10,15 @@ app.use(cors())
 app.use(express.json())
 
 //Controllers
-const transactionController = require("./controllers/transactionController")
-app.use("/transactions", transactionController)
+const transactionsController = require("./controllers/transactionsController")
+app.use("/transactions", transactionsController)
 
 //Routes
-app.get("/", (response, request) => {
+app.get("/", (request, response) => {
     response.status(200).send("Welcome to Budget App")
 })
 
-app.get("*", (response, request) => {
+app.get("*", (request, response) => {
     response.status(404).send("Page Not Found")
 })
 
