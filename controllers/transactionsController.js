@@ -14,7 +14,7 @@ transactions.get("/:id", (request, response) => {
     if(transactionsArr[request.params.id]) {
         response.send(transactionsArr[request.params.id])
     } else {
-        response.redirect("./logs/id")
+        response.redirect("/NotFound")
     }
 })
 //Create
